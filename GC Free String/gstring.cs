@@ -900,7 +900,7 @@ namespace System
             while(true)
             {
                 idx = internal_index_of(this._value, value, idx + value.Length);
-				last_find = idx;
+                last_find = idx;
                 if (idx == -1 || idx + value.Length >= this._value.Length)
                     break;
             }
@@ -914,7 +914,7 @@ namespace System
             while(true)
             {
                 idx = internal_index_of(this._value, value, idx + 1);
-				last_find = idx;
+                last_find = idx;
                 if (idx == -1 || idx + 1 >= this._value.Length)
                     break;
             }
