@@ -225,17 +225,12 @@ namespace System
                     {
                         for(int k = 0; i < new_len; )
                         {
-                            if (j < brace_idx)
-                                ptr_result[i++] = ptr_input[j++];
-                            else
+                            if (j >= brace_idx && j <= brace_idx + 2)
                             {
                                 ptr_result[i++] = arg[k++];
-                                if (k == arg.Length)
-                                {
-                                    j += 3;
-                                    break;
-                                }
+                                if (k == arg.Length) j += 3;
                             }
+                            else ptr_result[i++] = ptr_input[j++];
                         }
                     }
                 }
@@ -899,7 +894,7 @@ namespace System
             int last_find = -1;
             while(true)
             {
-                idx = internal_index_of(this._value, value, idx + value.Length);
+                idx = internal_index_of(this._value, value, idx + 1);
                 last_find = idx;
                 if (idx == -1 || idx + value.Length >= this._value.Length)
                     break;
